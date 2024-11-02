@@ -4,9 +4,141 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link href="../../src/css/output.css" rel="stylesheet">
     </head>
-    <body>
-        <h1 class="text-[120px]">Hallo</h1>
+    <body class="bg-[#021526]">
+        <div id="menu" class="fixed z-10 bg-[#021526b4] text-white right-5 mt-[2px] p-4 px-10 backdrop-blur-sm rounded-md hidden transform -translate-y-4 transition-all duration-300">
+            <div class="justify-center items-center my-2">
+                <a href="#" class="hover:text-[#ffffffa3] focus:text-[#ffffffa3] transition-all">
+                    <h3>Home</h3>
+                </a>
+            </div>
+            <div class="justify-center items-center my-2">
+                <a href="" class="hover:text-[#ffffffa3] focus:text-[#ffffffa3] transition-all">
+                    <h3>About Me</h3>
+                </a>
+            </div>
+            <div class="justify-center items-center my-2">
+                <a href="" class="hover:text-[#ffffffa3] focus:text-[#ffffffa3] transition-all">
+                    <h3>Skills</h3>
+                </a>
+            </div>
+            <div class="justify-center items-center my-2">
+                <a href="" class="hover:text-[#ffffffa3] focus:text-[#ffffffa3] transition-all">
+                    <h3>Project</h3>
+                </a>
+            </div>
+            <div class="justify-center items-center my-2">
+                <a href="" class="hover:text-[#ffffffa3] focus:text-[#ffffffa3] transition-all">
+                    <h3>Portfolio</h3>
+                </a>
+            </div>
+        </div>
+        <nav class="bg-[#02152676] fixed w-full top-0 z-50 text-white p-4 md:px-[100px] backdrop-blur-sm">
+            <div class="grid grid-cols-2">
+                <div class="">
+                    <h1 class="font-bold text-[20px]">Aldigitaldev</h1>
+                </div>
+                <div class="md:hidden">
+                    <button id="menuButton" class="md:hidden text-2xl w-[35px] focus:text-white focus:bg-[#ffffff6e]  hover:text-[#021526] hover:bg-white h-[35px] justify-center border rounded-[5px] absolute right-5 transition-all"><i class="ri-menu-line"></i></button>
+                </div>
+                
+                <div class="md:grid grid-cols-5 justify-center items-center hidden">
+                    <div class="justify-center items-center">
+                        <a href="#" class="hover:text-[#ffffffa3] focus:text-[#ffffffa3] transition-all">
+                            <h3>Home</h3>
+                        </a>
+                    </div>
+                    <div class="justify-center items-center">
+                        <a href="" class="hover:text-[#ffffffa3] focus:text-[#ffffffa3] transition-all">
+                            <h3>About Me</h3>
+                        </a>
+                    </div>
+                    <div class="justify-center items-center">
+                        <a href="" class="hover:text-[#ffffffa3] focus:text-[#ffffffa3] transition-all">
+                            <h3>Skills</h3>
+                        </a>
+                    </div>
+                    <div class="justify-center items-center">
+                        <a href="" class="hover:text-[#ffffffa3] focus:text-[#ffffffa3] transition-all">
+                            <h3>Project</h3>
+                        </a>
+                    </div>
+                    <div class="justify-center items-center">
+                        <a href="" class="hover:text-[#ffffffa3] focus:text-[#ffffffa3] transition-all">
+                            <h3>Portfolio</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main  class="mt-[90px]">
+            <!-- MAIN -->
+            <div class="bg-[#021526] text-white font-sans md:h-[35rem] h-[13rem] flex justify-center relative">
+                <div class="flex justify-center md:items-center w-full relative">
+                    <div class="absolute md:px-[50px] md:pr-[100px] pr-[25px] rounded-e-full bg-[#1F4287] md:bottom-0 left-0 mt-2" data-aos="fade-right" data-aos-duration="1000">
+                        <img class="md:w-[580px] w-[200px]" src="../assets/img/profile.png">
+                    </div>
+                    <div class="absolute right-[50px] md:right-60 mt-3" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="flex items-center mb-[-20px]">
+                            <div class="w-5 h-[1px] bg-[#21E6C1] mr-2"></div>
+                            <h3 class="text-[12px] md:text-2xl">Hello, I'm</h3>
+                        </div>      
+                        <h1 class="text-[25px] w-[150px] md:w-[400px] md:text-6xl font-bold mt-4 ">Aldi <span class="text-[#21E6C1]">Tulus</span> Pribadi</h1>
+                        <p class="w-[150px] md:w-[450px] md:mt-8 text-[10px] md:text-[20px] font-thin text-wrap">I am a student of Informatics Study Program, Ahmad Dahlan University. Currently studying in the field of Back-end and Full-stack Development</p>
+                        <div class="w-20 h-[1px] mt-2 bg-[#21E6C1] mr-2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ABOUT ME -->
+             <div class="bg-[#1a3853] px-5 md:px-32 py-5 text-white">
+                 <h1 class="font-bold text-[#21E6C1] text-2xl md:text-4xl">ABOUT ME</h1>
+                 <div class="w-32 md:mt-2 h-[1px] bg-[#21E6C1] mr-2"></div>
+                 <div class="grid md:grid-cols-2 mt-2">
+                    <div>
+                        <h1 class="font-bold my-3 md:text-2xl">Hi! I am</h1>
+                        <p class="text-wrap text-[15px] md:text-[18px]"> an Informatics Engineering student at Universitas Ahmad Dahlan, very interested in the world of backend and full-stack development. My journey in technology is driven by a strong desire to solve real-world problems through code, continuously developing my skills to stay up-to-date with the latest technology and best practices.
+                        <br><br>
+                        I am always eager to learn and explore new opportunities that can help me grow both professionally and personally. Let's connect and create something impactful together!</p>
+                        <div class="w-32 h-[1px] mt-2 bg-[#21E6C1] mr-2"></div>
+                    </div>
+                    <div class="md:mx-9">
+                        <h1  class="font-bold my-3 md:text-2xl">Let's Connect With Me</h1>
+                        <div class="mt-7 grid grid-cols-4">
+                            <div class="flex flex-col justify-center">
+                                <h1>asa</h1>
+                                <h1>asa</h1>
+                            </div>
+                            <div class="flex flex-col justify-center items-center">
+                                <h1>asa</h1>
+                                <h1>asa</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </main>
     </body>
 </html>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script>
+    const menuButton = document.getElementById('menuButton');
+    const menu = document.getElementById('menu');
+
+    menuButton.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        if(!menu.classList.contains('hidden')) {
+            menu.classList.remove('opacity-0', '-translate-y-4')
+            menu.classList.add('opacity-100', 'translate-y-0')
+        } else {
+            menu.classList.add('opacity-0', '-translate-y-4')
+            menu.classList.remove('opacity-100', 'translate-y-0')
+        }
+    });
+</script>
