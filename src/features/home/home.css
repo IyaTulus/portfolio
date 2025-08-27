@@ -1,0 +1,13 @@
+.headerBlue {
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px #37B7C3;
+}
+
+@media (max-width: 768px) {
+  .headerBlue {
+    clip-path: polygon(80% 0, 100% 0, 100% 100%, 30% 100%);
+  }
+}
