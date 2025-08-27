@@ -43,8 +43,8 @@ const Home: React.FC = () => {
                 >
                     <h1 className='flex text-[2rem] md:text-[4rem] tracking-wider font-bold w-[11rem] md:w-[45rem] text-[#088395]'>Software Developer</h1>
                     <div className='flex gap-5 mt-5'>
-                        <a className='border-[#088395] border-2 bg-[#088395] p-2 rounded-tl-lg rounded-br-lg text-white hover:bg-white hover:text-[#088395] duration-150 md:text-xl'>Linkedin</a>
-                        <a className='border-[#088395] border-2 p-2 rounded-tl-lg rounded-br-lg text-[#088395] hover:bg-[#088395] hover:text-white duration-150 md:text-xl'>Github</a>
+                        <a href='https://www.linkedin.com/in/alditulus' className='border-[#088395] border-2 bg-[#088395] p-2 rounded-tl-lg rounded-br-lg text-white hover:bg-white hover:text-[#088395] duration-150 md:text-xl'>Linkedin</a>
+                        <a href='https://github.com/IyaTulus' className='border-[#088395] border-2 p-2 rounded-tl-lg rounded-br-lg text-[#088395] hover:bg-[#088395] hover:text-white duration-150 md:text-xl'>Github</a>
                     </div>
                     <div className='mt-10 md:mt-14 flex flex-col md:justify-bottom md:gap-1'>
                         <h1 className='text-[13px] md:text-[25px] tracking-wider font-medium md:font-light text-[#088395]'>Projects Worked in my career</h1>

@@ -10,11 +10,22 @@ const IndexPage: React.FC = () => {
         <>
             <Header />
             <div>
-                <Home/>
-                <About/>
-                <Skils/>
-                <Experience/>
-                <Project/>
+                <div id="home">
+                    <Home />
+                </div>
+                <div id="about">
+                    <About />
+                </div>
+                {/* ID di sini HARUS sama persis dengan link di atas */}
+                <div id="skills">
+                    <Skils />
+                </div>
+                <div id="experience">
+                    <Experience />
+                </div>
+                <div id="project">
+                    <Project />
+                </div>
             </div>
         </>
     );

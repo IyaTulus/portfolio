@@ -26,7 +26,7 @@ const Header: React.FC = () => {
 
     const navButtom = () => {
         return (
-            <nav className="flex gap-x-[15px] backdrop-blur-[1.5px] shadow-md p-2 z-50 md:hidden justify-around m-10 rounded-full">
+            <nav className="fixed bottom-5 left-1/2 -translate-x-1/2 flex gap-x-2 backdrop-blur-lg shadow-lg p-2 z-50 bg-white/50 md:hidden justify-around rounded-full">
                 {iconItems.map((item) => {
                     const isActive = isActives === item.link;
                     return (
@@ -48,10 +48,6 @@ const Header: React.FC = () => {
         return (
             <nav className="flex fixed top-0 left-0 w-full backdrop-blur-[1.5px] shadow-md p-4 z-50 justify-between items-center">
                 <div className="hidden md:flex gap-8 mr-auto w-full text-[#37B7C3] font-medium">
-                    <div className="mx-10">
-                        <h1 className="font-bold text-[18px]">AldigitalDev</h1>
-                    </div>
-
                     <div className="flex w-full justify-center gap-10 items-center text-slate-700 font-normal">
                         {menuItems.map((item) => {
                             const isActive = isActives === item.link;
