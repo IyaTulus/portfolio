@@ -1,0 +1,28 @@
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  cursor: pointer;
+}
+
+.swiper-slide-active:hover .info-project {
+    opacity: 80%;
+    transform: scale(1.1);
+}
+
+.swiper-slide-active:hover img {
+    /* opacity: 50%; */
+    transform: scale(1.1);
+}
+
+.swiper-slide img {
+  /* display: block; */
+  width: 100%;
+}
