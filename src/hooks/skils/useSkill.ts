@@ -1,32 +1,15 @@
-import { useEffect, useState } from "react";
-import { supabase } from "../../supabaseClient";
+import { useQuery } from "@tanstack/react-query";
+import { fetchSkill } from "../../services/skillService";
 
 export default function useSkills() {
-    const [skills, setSkills] = useState<any[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
-
-    useEffect(() => {
-        const fetchSkills = async () => {
-            try {
-                const { data, error } = await supabase.from("skills").select("*");
-                if (error) throw error;
-                if (data) {
-                    setSkills(data);
-                }
-            } catch (err: any) {
-                setError(err.message);
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        fetchSkills();
-    }, [])
+    const { data: skills = [], isLoading: loading, error } = useQuery({
+        queryKey: ["skills"],
+        queryFn: fetchSkill,
+    });
 
     return { 
         skills, 
         loading, 
-        error 
+        error: error ? error.message : null 
     };
 }

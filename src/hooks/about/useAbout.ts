@@ -1,32 +1,15 @@
-import { useEffect, useState } from "react";
-import { supabase } from "../../supabaseClient";
+import { useQuery } from "@tanstack/react-query";
+import { fetchAbout } from "../../services/aboutService";
 
 export default function useAbout() {
-    const [about, setAbout] = useState<any[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
-
-    useEffect(() => {
-        const fetchAbout = async () => {
-            try {
-                const { data, error } = await supabase.from("about").select("*");
-                if (error) throw error;
-                if (data) {
-                    setAbout(data);
-                }
-            } catch (err: any) {
-                setError(err.message);
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        fetchAbout();
-    }, [])
+    const { data: about = [], isLoading: loading, error } = useQuery({
+        queryKey: ["about"],
+        queryFn: fetchAbout,
+    });
 
     return { 
         about, 
         loading, 
-        error 
+        error: error ? error.message : null 
     };
 }

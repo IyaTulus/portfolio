@@ -1,32 +1,15 @@
-import { useEffect, useState } from "react";
-import { supabase } from "../../supabaseClient";
+import { useQuery } from "@tanstack/react-query";
+import { fetchProject } from "../../services/projectService";
 
 export default function useProject() {
-    const [projects, setProjects] = useState<any[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
-
-    useEffect(() => {
-        const fetchProjects = async () => {
-            try {
-                const { data, error } = await supabase.from("project").select("*");
-                if (error) throw error;
-                if (data) {
-                    setProjects(data);
-                }
-            } catch (err: any) {
-                setError(err.message);
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        fetchProjects();
-    }, [])
+    const { data: projects = [], isLoading: loading, error } = useQuery({
+        queryKey: ["projects"],
+        queryFn: fetchProject,
+    });
 
     return { 
         projects, 
         loading, 
-        error 
+        error: error ? error.message : null 
     };
 }

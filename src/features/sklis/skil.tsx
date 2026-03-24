@@ -2,35 +2,66 @@ import { Icon } from "@iconify/react";
 import useSkills from "../../hooks/skils/useSkill";
 
 const Skils: React.FC = () => {
-    const { skills } = useSkills();
+    const { skills, loading, error } = useSkills();
 
     return (
-        <div className="px-5 md:px-16 py-10 bg-[#EBF4F6]" id="skill">
-            <h1 className='flex text-[2rem] md:text-[4rem] tracking-wider font-bold w-[11rem] md:w-[45rem] text-[#088395]'>Skills</h1>
-            <span className='flex text-[1rem] md:text-[2rem] tracking-wider font-light text-[#088395]'>My Skill</span>
-            <div className="flex w-full justify-center items-center mt-10">
-                <div className="grid md:grid-cols-2 gap-5 md:gap-x-[5rem] md:gap-y-[2rem] py-5">
-                    {skills.map((item) => (
-                        <div
-                            key={item.id}
-                            className="flex border-2 border-[#088395] rounded-br-lg rounded-tl-lg md:w-[25rem] 
-             transition-all duration-300 ease-in-out transform hover:scale-105 
-             hover:shadow-lg hover:shadow-[#088395]/30 hover:border-transparent 
-             hover:bg-gradient-to-r hover:from-[#088395]/10 hover:to-[#37B7C3]/10"
-                        >
-                            <div className="flex justify-center items-center w-[4rem] p-3">
-                                <Icon icon={item.icon} className="text-[2rem] text-[#088395]" />
-                            </div>
-                            <div className="flex flex-col justify-center p-3 text-slate-700">
-                                <h1 className="font-semibold text-xl md:text-2xl">{item.nama}</h1>
-                                <h1 className="font-light">{item.status}</h1>
-                            </div>
-                        </div>
-                    ))}
+        <section className="mt-12 w-full mb-16 font-mono relative" id="skills">
+            
+            {/* Minimalist Cyan Glow behind */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-64 bg-term-cyan/5 blur-3xl pointer-events-none rounded-full"></div>
+
+            <div className="flex justify-between items-center mb-12 w-full relative z-10 opacity-0-init animate-slide-up" style={{ animationDelay: '100ms' }}>
+                <div className="flex items-center gap-3">
+                    <span className="text-[#4af626] font-bold text-xl animate-pulse">❯</span> 
+                    <h2 className="text-2xl md:text-3xl font-bold text-white tracking-wide mix-blend-screen">npm list --depth=0</h2>
                 </div>
             </div>
-        </div>
-    )
+            
+            <div className="relative z-10">
+                {loading ? (
+                    <div className="text-term-cyan animate-pulse flex items-center gap-3">
+                        <span className="w-2 h-4 bg-term-cyan animate-ping"></span> Resolving dependencies...
+                    </div>
+                ) : error ? (
+                    <div className="text-red-500 font-bold border border-red-500/30 p-4 bg-red-500/10">
+                        stderr: {error}
+                    </div>
+                ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+                        {skills.map((item, index) => (
+                            <div
+                                key={item.id}
+                                className="group relative flex flex-col justify-between border-t border-b border-term-dim/30 bg-[#0a0f14]/40 hover:bg-term-cyan/5 p-5 transition-all duration-300 opacity-0-init animate-slide-up"
+                                style={{ animationDelay: `${(index + 1) * 100}ms` }}
+                            >
+                                {/* Scanline Highlight Top */}
+                                <div className="absolute top-0 left-0 w-0 h-[1px] bg-term-cyan group-hover:w-full group-hover:shadow-[0_0_10px_rgba(0,255,238,0.8)] transition-all duration-500"></div>
+
+                                <div className="flex items-start justify-between mb-6">
+                                    <Icon icon={item.icon} className="text-4xl text-term-dim group-hover:text-[#4af626] group-hover:drop-shadow-[0_0_8px_#4af626] transition-all duration-300" />
+                                    <span className="text-[10px] text-term-purple/60 font-bold tracking-widest uppercase">
+                                        MOD_{(index + 1).toString().padStart(2, '0')}
+                                    </span>
+                                </div>
+                                
+                                <div>
+                                    <h3 className="font-bold text-term-base group-hover:text-white transition-colors text-base truncate mb-3 tracking-wide select-all">
+                                        {item.nama}
+                                    </h3>
+                                    <div className="flex items-center justify-between">
+                                        <div className="text-[10px] text-term-dim uppercase tracking-widest font-bold">Status</div>
+                                        <div className="text-[10px] text-term-cyan font-bold tracking-widest px-2 py-0.5 border border-term-cyan/30 bg-term-cyan/10 group-hover:bg-[#4af626]/20 group-hover:text-[#4af626] group-hover:border-[#4af626]/50 transition-colors">
+                                            {item.status}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+        </section>
+    );
 }
 
 export default Skils;
