@@ -6,13 +6,13 @@ const Project: React.FC = () => {
 
     return (
         <section className="mt-16 w-full mb-20 font-mono relative" id="projects">
-            
+
             {/* Minimalist Cyan Glow behind */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-80 bg-term-cyan/5 blur-3xl pointer-events-none rounded-full"></div>
 
             <div className="flex justify-between items-center mb-14 w-full relative z-10 opacity-0-init animate-slide-up" style={{ animationDelay: '100ms' }}>
                 <div className="flex items-center gap-3">
-                    <span className="text-[#4af626] font-bold text-xl animate-pulse">❯</span> 
+                    <span className="text-[#4af626] font-bold text-xl animate-pulse">❯</span>
                     <h2 className="text-2xl md:text-3xl font-bold text-white tracking-wide mix-blend-screen">ls -la ./projects</h2>
                 </div>
             </div>
@@ -30,7 +30,7 @@ const Project: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                         {projects.map((project: any, index: number) => (
                             <div key={project.id} className="group relative flex flex-col border border-term-dim/30 bg-[#0a0f14]/60 hover:border-term-cyan/60 transition-all duration-500 overflow-hidden hover:shadow-[0_0_15px_rgba(0,255,238,0.15)] rounded-sm opacity-0-init animate-slide-up" style={{ animationDelay: `${(index + 2) * 150}ms` }}>
-                                
+
                                 {/* Top Scanline */}
                                 <div className="absolute top-0 left-0 w-0 h-[2px] bg-term-cyan group-hover:w-full group-hover:shadow-[0_0_10px_rgba(0,255,238,0.8)] transition-all duration-700 z-20"></div>
 
@@ -38,8 +38,8 @@ const Project: React.FC = () => {
                                 <div className="h-48 md:h-56 relative overflow-hidden border-b border-term-dim/30">
                                     <div className="absolute inset-0 bg-term-bg/40 mix-blend-overlay z-10 group-hover:bg-transparent transition-all duration-500 pointer-events-none"></div>
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f14] to-transparent z-10 pointer-events-none"></div>
-                                    <img 
-                                        src={project.image} 
+                                    <img
+                                        src={project.image}
                                         alt={project.nama}
                                         className="w-full h-full object-cover object-center grayscale-[80%] opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                                         loading="lazy"
@@ -70,11 +70,11 @@ const Project: React.FC = () => {
                                             {project.nama}
                                         </h3>
                                     </div>
-                                    
+
                                     <p className="text-sm text-term-base/70 mb-6 line-clamp-3 leading-relaxed text-justify pl-2">
                                         {project.deskripsi}
                                     </p>
-                                    
+
                                     {/* Tech Stack */}
                                     {project.bahasa && project.bahasa.trim() !== "" && (
                                         <div className="mt-auto pl-2">
@@ -90,25 +90,25 @@ const Project: React.FC = () => {
                                     )}
 
                                     <div className="pt-4 mt-auto border-t border-term-dim/20 flex gap-5 pl-2">
-                                        {project.tautan && (
-                                            <a 
-                                                href={project.tautan}
+
+                                        {project.link && (
+                                            <a
+                                                href={project.link}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="flex items-center gap-2 text-sm text-term-dim hover:text-[#4af626] transition-colors duration-300 group/link outline-none"
+                                                className="flex items-center gap-2 text-sm text-[#4af626] transition-colors duration-300 group/link outline-none"
                                             >
-                                                <Icon icon="mdi:github" className="text-xl group-hover/link:drop-shadow-[0_0_5px_#4af626]" /> 
-                                                <span className="tracking-wide border-b border-transparent group-hover/link:border-[#4af626] transition-all">Source</span>
+                                                <span className="tracking-wide border-b border-transparent group-hover/link:border-[#4af626] transition-all">View Detail</span>
                                             </a>
                                         )}
                                         {project.link_demo && (
-                                            <a 
+                                            <a
                                                 href={project.link_demo}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="flex items-center gap-2 text-sm text-term-cyan hover:text-white transition-colors duration-300 group/link outline-none"
                                             >
-                                                <Icon icon="mdi:web" className="text-xl group-hover/link:drop-shadow-[0_0_5px_rgba(0,255,238,0.8)]" /> 
+                                                <Icon icon="mdi:web" className="text-xl group-hover/link:drop-shadow-[0_0_5px_rgba(0,255,238,0.8)]" />
                                                 <span className="tracking-wide border-b border-transparent group-hover/link:border-term-cyan transition-all">Live Demo</span>
                                             </a>
                                         )}
@@ -119,7 +119,7 @@ const Project: React.FC = () => {
                     </div>
                 )}
             </div>
-            
+
             {/* View More Button Container */}
             {!loading && !error && projects.length > 0 && (
                 <div className="mt-16 flex justify-center relative z-10 opacity-0-init animate-slide-up" style={{ animationDelay: '600ms' }}>

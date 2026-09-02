@@ -10,7 +10,7 @@ const About: React.FC = () => {
     return (
         <section className="mt-12 w-full mb-16 font-mono" id="about">
             <div className="flex flex-col md:flex-row gap-12 lg:gap-20 relative">
-                
+
                 {/* Minimalist Cyan Glow behind the whole section */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-64 bg-term-cyan/5 blur-3xl pointer-events-none rounded-full"></div>
 
@@ -18,7 +18,7 @@ const About: React.FC = () => {
                 <div className="w-full md:w-[50%] z-10">
                     <div className="flex justify-between items-center mb-10 relative opacity-0-init animate-slide-up" style={{ animationDelay: '100ms' }}>
                         <div className="flex items-center gap-3">
-                            <span className="text-[#4af626] font-bold text-xl animate-pulse">❯</span> 
+                            <span className="text-[#4af626] font-bold text-xl animate-pulse">❯</span>
                             <h2 className="text-2xl md:text-3xl font-bold text-white tracking-wide mix-blend-screen">cat about.md</h2>
                         </div>
                     </div>
@@ -48,17 +48,17 @@ const About: React.FC = () => {
                 <div className="w-full md:w-[45%] flex flex-col z-10">
                     <div className="mb-10 relative opacity-0-init animate-slide-up" style={{ animationDelay: '300ms' }}>
                         <div className="text-term-purple font-semibold flex items-center gap-3 text-lg">
-                            <span className="text-term-cyan">{"//"}</span> 
+                            <span className="text-term-cyan">{"//"}</span>
                             <span className="tracking-wide text-white">core_offerings.json</span>
                         </div>
                     </div>
-                    
+
                     <div className="space-y-8">
                         {loadingAbout ? (
                             <div className="text-term-cyan animate-pulse">Querying specs...</div>
                         ) : (
                             about.map((item, index) => (
-                                <div key={item.id} className="group border-l-[2px] border-term-dim/30 hover:border-[#4af626] hover:bg-term-cyan/5 pl-5 py-2 transition-all duration-300 opacity-0-init animate-slide-up" style={{ animationDelay: `${(index + 3) * 150}ms` }}>
+                                <div key={item.id} className="group border-l-[2px] p-2 border-term-dim/30 hover:border-[#4af626] hover:bg-term-cyan/5 pl-5 py-2 transition-all duration-300 opacity-0-init animate-slide-up" style={{ animationDelay: `${(index + 3) * 150}ms` }}>
                                     <div className="flex justify-between items-start mb-2">
                                         <div className="flex gap-4">
                                             <span className="text-xs text-term-purple mt-1 font-bold">
